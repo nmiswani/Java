@@ -1,0 +1,12 @@
+Assignment 1 (Individual)
+
+Instruction
+You are required to develop a small system using Java programming language. The system
+should be able to:
+
+1. Count number of java files in your directory/folder.
+2. Count number of issues (solved problems) in the directory/folder.
+
+Example of the output is shown below:
+Number of Java Files = 8
+Number of Issues = 3
