@@ -6,7 +6,7 @@ public class VolatileFlagExample {
     private static volatile boolean running = true;
 
     public static void main(String[] args) {
-        // Thread that runs continuously until running becomes false
+        // Thread that runs continuously until 'running' becomes false
         Thread worker = new Thread(() -> {
             System.out.println("Worker thread started...");
             while (running) {
@@ -19,11 +19,11 @@ public class VolatileFlagExample {
 
         // Main thread sleeps for a bit then signals stop
         try {
-            Thread.sleep (2000); // Let the worker run for 2 seconds
+            Thread.sleep(2000); // Let worker run for 2 seconds
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
         System.out.println("Main thread stopping worker...");
-        running = false; // Signal the worker thread to stop
+        running = false; // Signal worker to stop
     }
 }
