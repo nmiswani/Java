@@ -35,7 +35,7 @@ public class Main {
         Runnable withdrawer = () -> {
             // Loop to withdraw twice
             for (int i = 0; i < 2; i++) {
-                account.withdraw(700); // Withdraw 700 with writeLock()
+                account.withdraw(500); // Withdraw 500 with writeLock()
                 try {
                     Thread.sleep(100);
                 } catch (InterruptedException e) {
@@ -54,7 +54,7 @@ public class Main {
         t2.start();
         t3.start();
 
-        // Wait for all threads to finish execution before exiting main thread
+        // Wait for all threads to finish before exiting main thread
         try {
             t1.join();
             t2.join();

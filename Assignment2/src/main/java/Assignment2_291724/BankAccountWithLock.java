@@ -1,5 +1,4 @@
 package Assignment2_291724;
-
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.concurrent.locks.Lock;
 
@@ -13,7 +12,6 @@ public class BankAccountWithLock {
     public BankAccountWithLock(double initialBalance) {
         this.balance = initialBalance;
     }
-
     // Read balance (shared lock)
     public double getBalance() {
         readLock.lock();
@@ -24,7 +22,6 @@ public class BankAccountWithLock {
             readLock.unlock();
         }
     }
-
     // Deposit money (exclusive lock)
     public void deposit(double amount) {
         writeLock.lock();
@@ -35,7 +32,6 @@ public class BankAccountWithLock {
             writeLock.unlock();
         }
     }
-
     // Withdraw money (exclusive lock)
     public void withdraw(double amount) {
         writeLock.lock();
